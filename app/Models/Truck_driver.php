@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Truck_driver extends Model
 {
-    public function package(){
+    public function trucks(){
+        return $this->belongsToMany('App\Models\Truck');
+    }  
+
+    public function packages(){
         return $this->hasMany('App\Models\Package');
-}
+    }
 }

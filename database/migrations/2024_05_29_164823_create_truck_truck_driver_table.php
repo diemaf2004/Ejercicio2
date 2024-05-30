@@ -13,8 +13,28 @@ return new class extends Migration
     {
         Schema::create('truck_truck_driver', function (Blueprint $table) {
             $table->id();
+            
+    
+    
+                $table->unsignedBigInteger('truck_id')->nullable();
+                $table->unsignedBigInteger('truck_driver_id')->nullable();
+    
+                $table->foreign('truck_id')
+                ->references('id')
+                ->on('trucks')->onDelete('cascade');
+    
+    
+                $table->foreign('truck_driver_id')
+                ->references('id')
+                ->on('truck_drivers')->onDelete('cascade');
+    
+    
+    
+    
+              
             $table->timestamps();
         });
+        
     }
 
     /**

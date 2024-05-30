@@ -25,6 +25,7 @@ return new class extends Migration
             $table->foreign('truck_driver_id')
             ->references('id')
             ->on('truck_drivers')->onDelete('set null');
+            
         });
     }
 
