@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Package extends Model
 {
-    public function truck_driver(){
-        return $this->belongsTo('App\Models\Truck_driver');
+    public function truckers(){
+        return $this->belongsTo('App\Models\Trucker');
 }
 }

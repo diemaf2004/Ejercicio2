@@ -11,22 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('truck_truck_driver', function (Blueprint $table) {
+        Schema::create('truck_trucker', function (Blueprint $table) {
             $table->id();
             
     
     
                 $table->unsignedBigInteger('truck_id')->nullable();
-                $table->unsignedBigInteger('truck_driver_id')->nullable();
+                $table->unsignedBigInteger('trucker_id')->nullable();
     
                 $table->foreign('truck_id')
                 ->references('id')
                 ->on('trucks')->onDelete('cascade');
     
     
-                $table->foreign('truck_driver_id')
+                $table->foreign('trucker_id')
                 ->references('id')
-                ->on('truck_drivers')->onDelete('cascade');
+                ->on('truckers')->onDelete('cascade');
     
     
     
@@ -42,6 +42,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('truck_truck_driver');
+        Schema::dropIfExists('truck_trucker');
     }
 };

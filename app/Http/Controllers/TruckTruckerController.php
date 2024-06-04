@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Truck;
+use App\Models\Trucker;
 use Illuminate\Http\Request;
 
-class TruckTruckdriverController extends Controller
+class TruckTruckerController extends Controller
 {
     public function index()
     {
-        $truck_drivers = Truck_driver::all();
         $trucks = Truck::all();
+        $truckers = Trucker::all();
        
-        return view('trucks.asociar',compact('truck_drivers','trucks'));
+        return view('trucks.asociar',compact('trucks','truckers'));
     }
 
     /**
@@ -29,11 +31,10 @@ class TruckTruckdriverController extends Controller
     {   
 
         $truck=Truck::find($request->truck_id);
-       
-        $truck->truckers()->attach($request->truck_driver_id);
+        $truck->truckers()->attach($request->truck_id);
               
         
-     return 'hecho';
+     return 'Registro exitoso';
     }
 
     /**

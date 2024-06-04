@@ -7,7 +7,7 @@
 <body>
 <h1>Asociar Camiones:</h1>
 
-<form action="{{route('truck_truck_driver.store')}}" method="POST" enctype="multipart/form-data">
+<form action="{{route('truck_trucker.store')}}" method="POST" enctype="multipart/form-data">
 
     @csrf
  
@@ -21,9 +21,9 @@
     </select>
     <br>
     <h1>Camionero:</h1>    
-    <select name="truck_driver_id">
+    <select name="trucker_id">
         @foreach($truckers as $trucker)
-            <option value="{{ $truck_driver->id }}">{{ $truck_driver->id }} - {{ $truck_driver->name }}</option>
+            <option value="{{ $trucker->id }}">{{ $trucker->id }} - {{ $trucker->name }}</option>
         @endforeach
     </select>
 

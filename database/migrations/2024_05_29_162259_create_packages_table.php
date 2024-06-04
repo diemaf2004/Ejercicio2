@@ -20,15 +20,15 @@ return new class extends Migration
             $table->timestamps();
 
              //Atributos foraneos
-             $table->unsignedBigInteger('truck_driver_id')->nullable();
+             $table->unsignedBigInteger('truckers_id')->nullable();
               //referenciando la tabla users
-            $table->foreign('truck_driver_id')
+            $table->foreign('truckers_id')
             ->references('id')
-            ->on('truck_drivers')->onDelete('set null');
+            ->on('truckers')->onDelete('set null');
             
         });
     }
-
+    
     /**
      * Reverse the migrations.
      */
